@@ -3,21 +3,21 @@ package WWW::Pastebin::Base::Retrieve;
 use warnings;
 use strict;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Carp;
 use URI;
 use LWP::UserAgent;
 use base 'Class::Data::Accessor';
 
-__PACKAGE__->mk_classaccessors qw(
+__PACKAGE__->mk_classaccessors( qw(
     ua
     uri
     id
     content
     error
     results
-);
+));
 
 use overload q|""| => sub { shift->content };
 
@@ -96,6 +96,8 @@ sub _make_uri_and_id {
 
 1;
 __END__
+
+=encoding utf8
 
 =head1 NAME
 

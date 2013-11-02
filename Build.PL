@@ -15,7 +15,9 @@ my $builder = Module::Build->new(
         'URI'                   => 1.35,
         'LWP::UserAgent'        => 2.036,
         'Class::Data::Accessor' => 0.04001,
+        perl                    => '5.006',
     },
+    configure_requires => { 'Module::Build' => 0 },
     add_to_cleanup      => [ 'WWW-Pastebin-Base-Retrieve-*' ],
     create_makefile_pl => 'traditional',
 );
